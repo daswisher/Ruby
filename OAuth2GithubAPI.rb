@@ -25,3 +25,12 @@ Steps A-D create the token (this happens only once per user)
 Steps E-F occurs at every third party request from the API
 '''
 
+#In order to retrieve all information about responses during token creation, there is a method we can call on the response from the api
+client = GitHub.new
+response = client.create_token
+puts response.inspect #This will print all information about the response...header, body, how many requests can be made to the service, etc
+
+#OAuth apps use client_id/client_secret as a way of authentication (this is the same prinicple as username/password on standard access methods)
+#Here is an example set:
+client_id = '34k32ljwer34543k5j345lkj4'
+client_secret = '343634k5jwerk4545kw4poi62345oifus9d8f1123jlkjdf98'
