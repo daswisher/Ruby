@@ -1,5 +1,5 @@
 require 'httparty'
-
+require 'json'
 token = "e6a75d6b6d7b0fdd0eee93fd3c141d808852a0e9" 
 
 user = HTTParty.get "https://api.github.com/user",
@@ -34,3 +34,11 @@ puts response.inspect #This will print all information about the response...head
 #Here is an example set:
 client_id = '34k32ljwer34543k5j345lkj4'
 client_secret = '343634k5jwerk4545kw4poi62345oifus9d8f1123jlkjdf98'
+
+#There is a way to check token access/privileges by checking the scope of the token
+token = "e6a75d6b6d7b0fdd0eee93fd3c141d808852a0e9:
+request_headers = {"User-Agent" => "codecademy", "Authorization" => "token: #{token}"}
+
+respones = HTTParty.get "https://api.github.com",
+		:headers => request_headers
+print response.headers["X-OAuth-Scopes"]
