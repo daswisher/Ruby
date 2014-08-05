@@ -7,3 +7,10 @@ puts my_array.sort!
 my_string_array = ["These","are","unsorted","strings"]
 
 puts my_string_array.sort!
+
+#There is the comparison that can be used to determine if something is less than numerically or alphabetically. If the first item is less than, it returns 0; Equal returns 0; Greater than the second item returns 1
+
+number_1 = 2
+number_2 = 31
+
+number_1<=>number_2 #This yields -1
